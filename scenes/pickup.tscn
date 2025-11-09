@@ -1,0 +1,60 @@
+[gd_scene load_steps=12 format=3 uid="uid://duso8ys3osygd"]
+
+[ext_resource type="Script" uid="uid://bdggiv1h1orqe" path="res://scripts/Pickup.cs" id="1_yepx4"]
+[ext_resource type="Texture2D" uid="uid://wjajy8yrv7vo" path="res://assets/sprites/coin_01.png" id="2_cns2d"]
+[ext_resource type="Texture2D" uid="uid://rmt7xudo8n56" path="res://assets/sprites/coin_02.png" id="3_y0cjd"]
+[ext_resource type="Texture2D" uid="uid://dsltxbowhrsvs" path="res://assets/sprites/coin_03.png" id="4_2t3dg"]
+[ext_resource type="Texture2D" uid="uid://cpk6segsjr72g" path="res://assets/sprites/coin_04.png" id="5_6urce"]
+[ext_resource type="Texture2D" uid="uid://c441mbxud4hn5" path="res://assets/sprites/coin_05.png" id="6_lmdmn"]
+[ext_resource type="Texture2D" uid="uid://jmgunxggw25l" path="res://assets/sprites/coin_06.png" id="7_nb14t"]
+[ext_resource type="Texture2D" uid="uid://dwaf16w1iej7r" path="res://assets/sprites/coin_07.png" id="8_e0d82"]
+[ext_resource type="Texture2D" uid="uid://dw010dvvd7cyl" path="res://assets/sprites/coin_08.png" id="9_c8g7p"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hygix"]
+radius = 11.18034
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vowll"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_cns2d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_y0cjd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_2t3dg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_6urce")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_lmdmn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_nb14t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_e0d82")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_c8g7p")
+}],
+"loop": true,
+"name": &"spin",
+"speed": 6.0
+}]
+
+[node name="Pickup" type="Area2D"]
+z_index = 1
+script = ExtResource("1_yepx4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_hygix")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, 1.000001)
+scale = Vector2(0.530303, 0.47916666)
+sprite_frames = SubResource("SpriteFrames_vowll")
+animation = &"spin"
+frame_progress = 0.85787594
