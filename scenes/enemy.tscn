@@ -1,37 +1,12 @@
-[gd_scene load_steps=24 format=3 uid="uid://3e1axiukqinl"]
+[gd_scene load_steps=17 format=3 uid="uid://3e1axiukqinl"]
 
 [ext_resource type="Script" uid="uid://baqrx2s1q4geq" path="res://scripts/Enemy.cs" id="1_in2kx"]
 [ext_resource type="PackedScene" uid="uid://b2nq62phto4vo" path="res://scenes/hitparticles.tscn" id="2_c4w8v"]
-[ext_resource type="Texture2D" uid="uid://dc5y8bk3u3oxf" path="res://assets/sprites/Owlet_Monster_Attack2_6.png" id="2_vfqd3"]
 [ext_resource type="Texture2D" uid="uid://dktf3pxsvsw8w" path="res://assets/sprites/Owlet_Monster_Idle_4.png" id="3_2pcvk"]
 [ext_resource type="Texture2D" uid="uid://bohvem8anokct" path="res://assets/sprites/Owlet_Monster_Walk_6.png" id="4_7kfdx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5rsc5"]
 size = Vector2(23, 27)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wt70s"]
-atlas = ExtResource("2_vfqd3")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tftk4"]
-atlas = ExtResource("2_vfqd3")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ct21d"]
-atlas = ExtResource("2_vfqd3")
-region = Rect2(64, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pyvxj"]
-atlas = ExtResource("2_vfqd3")
-region = Rect2(96, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_uw1kq"]
-atlas = ExtResource("2_vfqd3")
-region = Rect2(128, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7h4sf"]
-atlas = ExtResource("2_vfqd3")
-region = Rect2(160, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4bblq"]
 atlas = ExtResource("3_2pcvk")
@@ -75,29 +50,6 @@ region = Rect2(160, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gi3nh"]
 animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wt70s")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_tftk4")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ct21d")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_pyvxj")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_uw1kq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7h4sf")
-}],
-"loop": true,
-"name": &"attack",
-"speed": 8.0
-}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_4bblq")
@@ -150,7 +102,9 @@ shape = SubResource("RectangleShape2D_5rsc5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_gi3nh")
-animation = &"attack"
-frame_progress = 0.33333328
+animation = &"idle"
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
